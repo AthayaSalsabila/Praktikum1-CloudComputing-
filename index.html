@@ -3,108 +3,481 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Athaya Salsabila</title>
+    <title>Portofolio | Athaya Salsabila Nuryanto</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
-            color: #1e293b;
-            text-align: center;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
-        .container {
-            max-width: 650px;
-            margin: 80px auto;
-            padding: 40px 25px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
         }
 
-        h1 {
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
             color: #2563eb;
-            margin-bottom: 10px;
         }
 
-        h3 {
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
             color: #475569;
-            font-weight: normal;
+            font-size: 14px;
+            font-weight: bold;
         }
 
-        p {
-            line-height: 1.8;
+        nav a:hover {
+            color: #2563eb;
         }
 
-        .skills {
-            margin: 25px 0;
+        /* Hero */
+        .hero {
+            min-height: 490px;
+            padding: 90px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: linear-gradient(120deg, #eff6ff, #ffffff);
         }
 
-        .skills span {
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .tagline {
             display: inline-block;
-            background-color: #dbeafe;
-            color: #1d4ed8;
-            padding: 8px 14px;
-            margin: 5px;
+            color: #2563eb;
+            background: #dbeafe;
+            padding: 6px 14px;
             border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.2;
+            margin: 20px 0;
+            color: #0f172a;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero p {
+            color: #64748b;
+            margin-bottom: 28px;
+            max-width: 580px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            background: white;
+        }
+
+        .btn-secondary:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        .hero-visual {
+            width: 280px;
+            height: 280px;
+            flex-shrink: 0;
+            border-radius: 35% 65% 60% 40% / 40% 40% 60% 60%;
+            background: linear-gradient(135deg, #2563eb, #93c5fd);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 76px;
+            font-weight: bold;
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.2);
+        }
+
+        /* General sections */
+        section {
+            padding: 75px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .section-heading h2 {
+            font-size: 30px;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: #64748b;
             font-size: 14px;
         }
 
-        .button {
-            display: inline-block;
-            background-color: #2563eb;
-            color: white;
-            padding: 12px 22px;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-top: 15px;
+        /* About */
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            padding: 30px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            text-align: center;
         }
 
-        .button:hover {
-            background-color: #1d4ed8;
-        }
-
-        footer {
-            margin-top: 25px;
+        .about-box p {
             color: #64748b;
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .skill {
+            background: white;
+            border: 1px solid #dbeafe;
+            color: #1d4ed8;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(15, 23, 42, 0.03);
+        }
+
+        /* Projects */
+        .projects {
+            background: #eff6ff;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 28px 24px;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(37, 99, 235, 0.1);
+        }
+
+        .project-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #dbeafe;
+            color: #2563eb;
+            border-radius: 12px;
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        .project-card h3 {
+            font-size: 18px;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #64748b;
+            margin-bottom: 22px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 25px 15px;
             font-size: 13px;
+        }
+
+        /* Responsive mobile */
+        @media (max-width: 800px) {
+            nav {
+                padding: 18px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 60px 6%;
+            }
+
+            .hero-visual {
+                width: 180px;
+                height: 180px;
+                font-size: 55px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+        }
+
+        @media (max-width: 430px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 13px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Athaya Salsabila Nuryanto</h1>
-        <h3>Mahasiswa Sistem Informasi | Telkom University Jakarta</h3>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Athaya.</div>
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#keahlian">Keahlian</a></li>
+            <li><a href="#proyek">Proyek</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
 
-        <p>
-            Halo! Saya Athaya, mahasiswa Sistem Informasi yang memiliki
-            ketertarikan pada teknologi, analisis data, dan pengembangan
-            sistem informasi. Saya senang mempelajari hal baru,
-            memecahkan masalah, dan mengembangkan kemampuan di bidang teknologi.
-        </p>
+    <!-- Hero Section -->
+    <header class="hero" id="beranda">
+        <div class="hero-content">
+            <span class="tagline">PORTOFOLIO PRIBADI</span>
 
-        <h3>Keahlian</h3>
+            <h1>
+                Halo, saya <span>Athaya Salsabila Nuryanto</span>
+            </h1>
 
-        <div class="skills">
-            <span>HTML & CSS</span>
-            <span>MySQL</span>
-            <span>Data Analysis</span>
-            <span>Figma</span>
+            <p>
+                Mahasiswa Sistem Informasi di Telkom University Jakarta
+                yang memiliki ketertarikan pada teknologi, analisis data,
+                dan pengembangan sistem informasi. Saya senang belajar
+                hal baru dan menciptakan solusi melalui teknologi.
+            </p>
+
+            <div class="buttons">
+                <a href="#proyek" class="btn btn-primary">
+                    Lihat Proyek
+                </a>
+
+                <a href="#kontak" class="btn btn-secondary">
+                    Hubungi Saya
+                </a>
+            </div>
         </div>
 
-        <a href="mailto:emailkamu@example.com" class="button">
-            Hubungi Saya
-        </a>
+        <div class="hero-visual">AS</div>
+    </header>
 
-        <footer>
-            <p>&copy; 2026 Athaya Salsabila Nuryanto</p>
-            <p>Portofolio Pribadi | Praktikum 1</p>
-        </footer>
-    </div>
+    <!-- Tentang Saya -->
+    <section id="tentang">
+        <div class="section-heading">
+            <h2>Tentang Saya</h2>
+            <p>Mengenal saya lebih dekat</p>
+        </div>
+
+        <div class="about-box">
+            <p>
+                Saya adalah mahasiswa Sistem Informasi yang tertarik
+                pada pengolahan data, pengembangan aplikasi, dan
+                pemanfaatan teknologi untuk menyelesaikan masalah.
+                Saya terus mengembangkan kemampuan teknis, komunikasi,
+                dan pemecahan masalah melalui pembelajaran serta
+                pengerjaan proyek.
+            </p>
+        </div>
+    </section>
+
+    <!-- Keahlian -->
+    <section id="keahlian">
+        <div class="section-heading">
+            <h2>Keahlian Saya</h2>
+            <p>Teknologi dan kemampuan yang saya pelajari</p>
+        </div>
+
+        <div class="skills">
+            <div class="skill">HTML & CSS</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Oracle SQL</div>
+            <div class="skill">PHP & Laravel</div>
+            <div class="skill">Java</div>
+            <div class="skill">Data Analysis</div>
+            <div class="skill">Figma</div>
+            <div class="skill">Problem Solving</div>
+        </div>
+    </section>
+
+    <!-- Proyek -->
+    <section class="projects" id="proyek">
+        <div class="section-heading">
+            <h2>Proyek Saya</h2>
+            <p>Beberapa proyek yang pernah saya kerjakan</p>
+        </div>
+
+        <div class="project-grid">
+
+            <article class="project-card">
+                <div class="project-icon">&#128274;</div>
+                <h3>SafeSpace</h3>
+                <p>
+                    Konsep sistem informasi untuk mendukung pelaporan
+                    kekerasan seksual, menyediakan informasi edukasi,
+                    dan membantu pemantauan laporan.
+                </p>
+            </article>
+
+            <article class="project-card">
+                <div class="project-icon">&#127968;</div>
+                <h3>SERWU</h3>
+                <p>
+                    Konsep aplikasi web yang mengintegrasikan layanan
+                    administrasi masyarakat dan marketplace
+                    dalam satu platform.
+                </p>
+            </article>
+
+            <article class="project-card">
+                <div class="project-icon">&#128202;</div>
+                <h3>Student Performance Analytics</h3>
+                <p>
+                    Proyek analisis data menggunakan teknik
+                    machine learning untuk mempelajari pola
+                    dan performa akademik mahasiswa.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section class="contact" id="kontak">
+        <div class="section-heading">
+            <h2>Mari Terhubung!</h2>
+            <p>
+                Terima kasih sudah mengunjungi portofolio saya.
+                Saya terbuka untuk belajar dan berkolaborasi.
+            </p>
+        </div>
+
+        <a href="mailto:emailkamu@example.com"
+           class="btn btn-primary">
+            Kirim Email
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 Athaya Salsabila Nuryanto.
+            Dibuat dengan HTML dan CSS.
+        </p>
+    </footer>
 
 </body>
 </html>
